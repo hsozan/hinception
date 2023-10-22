@@ -11,11 +11,8 @@ down:
 
 re: fclean all
 
-clean:
-	$(DOCKER) down -v --remove-orphans
-
 fclean: down
-	docker system prune -af
+	$(DOCKER) down -v --remove-orphans
 	sudo rm -rf $(USER_HOME)/data/*
 
 .PHONY: all down re clean fclean
